@@ -6,31 +6,63 @@
   <title>Portafolio - Uriel</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { background-color: #f5f5f5; color: #333; }
-    header { background: #222; color: #fff; padding: 50px 20px; text-align: center; }
-    header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-    header p { font-size: 1.1rem; }
-
-    section { padding: 50px 20px; max-width: 1000px; margin: auto; }
-
-    h2 { text-align: center; margin-bottom: 30px; color: #222; }
-
-    .proyectos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .card { background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); overflow: hidden; transition: 0.3s; }
-    .card:hover { transform: translateY(-5px); }
-    .card img { width: 100%; height: 180px; object-fit: cover; }
-    .card h3 { padding: 15px; font-size: 1.2rem; }
-    .card a { display: block; text-align: center; background: #222; color: white; padding: 10px; text-decoration: none; transition: 0.3s; }
-    .card a:hover { background: #444; }
-
-    .contacto { text-align: center; }
-    .contacto a { display: inline-block; margin-top: 10px; padding: 10px 20px; background: #222; color: #fff; text-decoration: none; border-radius: 5px; }
-    .contacto a:hover { background: #444; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      background: #4b0082;
+      color: white;
+    }
+    section {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .proyectos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      display: block;
+    }
+    .card h3 {
+      margin: 15px 0 5px;
+    }
+    .card a {
+      display: inline-block;
+      margin-bottom: 15px;
+      text-decoration: none;
+      color: white;
+      background: #4b0082;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    .card a:hover {
+      background: #321d5a;
+    }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Hola, soy Uriel</h1>
     <p>Creo páginas web modernas y económicas para negocios y emprendedores</p>
@@ -39,30 +71,28 @@
   <section>
     <h2>Mis Proyectos</h2>
     <div class="proyectos">
+
       <div class="card">
-        <img src="https://via.placeholder.com/400x200/8000ff/ffffff?text=Psicodélica" alt="Psicodélica">
+        <img src="img/Psicodélica.png" alt="Psicodélica">
         <h3>Página Psicodélica</h3>
         <a href="psicodelica.html">Ver Proyecto</a>
       </div>
+
       <div class="card">
-        <img src="https://via.placeholder.com/400x200/ff4f4f/ffffff?text=Arte" alt="Arte">
+        <img src="img/Arte.jpg" alt="Arte">
         <h3>Portfolio de Arte</h3>
         <a href="arte.html">Ver Proyecto</a>
       </div>
+
       <div class="card">
-        <img src="https://via.placeholder.com/400x200/00cc66/ffffff?text=Juegos" alt="Juegos">
+        <img src="img/Juegos.jpg" alt="Juegos">
         <h3>Página de Juegos</h3>
         <a href="juegos.html">Ver Proyecto</a>
       </div>
+
     </div>
   </section>
-
-  <section class="contacto">
-    <h2>Contacto</h2>
-    <p>¿Quieres que cree tu página web? Escríbeme:</p>
-    <a href="mailto:Uripala@gmail.com">Uripala@gmail.com</a>
-  </section>
-
 </body>
 </html>
+
 
