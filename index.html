@@ -1,3 +1,4 @@
+```
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,36 +29,61 @@
         /* Header */
         .header {
             text-align: center;
-            padding: 60px 0;
+            padding: 80px 0;
             position: relative;
+            background: radial-gradient(ellipse at center, rgba(139, 0, 0, 0.1) 0%, transparent 70%);
         }
 
         .header::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at center, rgba(139, 0, 0, 0.3) 0%, transparent 70%);
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(139, 0, 0, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(139, 0, 0, 0.2) 0%, transparent 50%);
+            animation: floating 20s ease-in-out infinite;
             pointer-events: none;
         }
 
         .main-title {
-            font-size: 4rem;
-            font-weight: bold;
-            color: #8b0000;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            font-size: 5rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #ff0000, #8b0000, #cc0000, #ff3333);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(139, 0, 0, 0.8);
             margin-bottom: 20px;
-            letter-spacing: 3px;
-            animation: glow 2s ease-in-out infinite alternate;
+            letter-spacing: 4px;
+            animation: glow 3s ease-in-out infinite alternate, gradientShift 8s ease-in-out infinite;
+            position: relative;
+        }
+
+        .main-title::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shine 4s ease-in-out infinite;
         }
 
         .subtitle {
-            font-size: 1.5rem;
-            color: #cc6666;
+            font-size: 1.8rem;
+            color: #ff6666;
             font-style: italic;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-shadow: 0 0 10px rgba(255, 102, 102, 0.5);
+            margin-bottom: 10px;
+            animation: pulse 2s ease-in-out infinite;
         }
 
         @keyframes glow {
@@ -75,45 +101,79 @@
         }
 
         .nav-btn {
-            background: linear-gradient(45deg, #4a4a4a, #2a2a2a);
-            border: 2px solid #8b0000;
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            border: 2px solid transparent;
+            background-clip: padding-box;
             color: #e0e0e0;
-            padding: 15px 30px;
-            font-size: 1.1rem;
+            padding: 18px 35px;
+            font-size: 1.2rem;
+            font-weight: 600;
             cursor: pointer;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 4px 15px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .nav-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-btn::after {
             content: '';
             position: absolute;
             top: -2px;
             left: -2px;
             right: -2px;
             bottom: -2px;
-            background: linear-gradient(45deg, #8b0000, #cc6666, #8b0000);
+            background: linear-gradient(45deg, #8b0000, #ff0000, #cc0000, #8b0000);
+            background-size: 400% 400%;
             z-index: -1;
-            border-radius: 10px;
+            border-radius: 15px;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.4s ease;
+            animation: gradientShift 3s ease-in-out infinite;
         }
 
         .nav-btn:hover::before {
+            left: 100%;
+        }
+
+        .nav-btn:hover::after {
             opacity: 1;
         }
 
         .nav-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(139, 0, 0, 0.4);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 
+                0 10px 25px rgba(139, 0, 0, 0.4),
+                0 0 20px rgba(139, 0, 0, 0.3);
+            color: #ffffff;
         }
 
         .nav-btn.active {
-            background: linear-gradient(45deg, #8b0000, #a00000);
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, #8b0000, #a00000);
+            transform: translateY(-3px);
+            box-shadow: 
+                0 8px 20px rgba(139, 0, 0, 0.5),
+                0 0 15px rgba(139, 0, 0, 0.4);
+            color: #ffffff;
+        }
+
+        .nav-btn.active::after {
+            opacity: 1;
         }
 
         /* Content Sections */
@@ -192,15 +252,37 @@
         }
 
         .card-title {
-            font-size: 1.3rem;
-            color: #cc6666;
-            margin-bottom: 10px;
-            font-weight: bold;
+            font-size: 1.5rem;
+            background: linear-gradient(45deg, #ff6666, #cc6666);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        .card-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #ff6666, #cc6666);
+            transition: width 0.3s ease;
+        }
+
+        .card:hover .card-title::after {
+            width: 100%;
         }
 
         .card-description {
-            color: #b0b0b0;
-            line-height: 1.5;
+            color: #d0d0d0;
+            line-height: 1.6;
+            font-size: 1rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
         }
 
         /* TV Channels */
@@ -335,71 +417,13 @@
         </header>
 
         <nav class="nav">
-            <button class="nav-btn active" data-section="peliculas">Películas</button>
-            <button class="nav-btn" data-section="series">Series</button>
-            <button class="nav-btn" data-section="tv">TV</button>
+            <button class="nav-btn active" data-section="tv">TV</button>
             <button class="nav-btn" data-section="contacto">Contacto</button>
         </nav>
 
         <main class="content">
-            <!-- Películas Section -->
-            <section id="peliculas" class="section active">
-                <h2 class="section-title">Películas</h2>
-                <div class="grid">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/55e8e4c1-72f9-443d-8596-b642b2064336.png" alt="Hereditary horror movie poster featuring dark atmospheric elements" />
-                        </div>
-                        <h3 class="card-title">Hereditary</h3>
-                        <p class="card-description">Un escalofriante thriller sobrenatural que explora los secretos más oscuros de una familia tras la muerte de su matriarca.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/213e89a0-e82b-447a-8fd3-2398fe1bef90.png" alt="Enemy psychological thriller movie poster featuring Jake Gyllenhaal" />
-                        </div>
-                        <h3 class="card-title">Enemy</h3>
-                        <p class="card-description">Un perturbador thriller psicológico protagonizado por Jake Gyllenhaal. Un hombre descubre a su doble exacto y su vida se convierte en una pesadilla.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c09f4c01-c9ab-4c3d-8cb3-339914a3f202.png" alt="Jurassic World Rebirth action adventure movie poster with dinosaurs" />
-                        </div>
-                        <h3 class="card-title">Jurassic World: Rebirth</h3>
-                        <p class="card-description">Una nueva aventura épica donde los dinosaurios regresan con una fuerza renovada. La supervivencia de la humanidad está en juego.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Series Section -->
-            <section id="series" class="section">
-                <h2 class="section-title">Series</h2>
-                <div class="grid">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/62e5e66c-5e72-4a16-840a-f6030f62a2ba.png" alt="Dark psychological drama series poster with multiple character portraits and moody atmosphere" />
-                        </div>
-                        <h3 class="card-title">Drama Psicológico</h3>
-                        <p class="card-description">Series que exploran las profundidades de la mente humana. Personajes complejos en situaciones límite.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c8071ba5-5cd3-472b-95f8-c0affc90fee3.png" alt="Crime investigation series poster with detective evidence board and dark atmosphere" />
-                        </div>
-                        <h3 class="card-title">Investigación Criminal</h3>
-                        <p class="card-description">Sigue las investigaciones más complejas y los casos más intrigantes del mundo del crimen.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/38da6876-a969-45b0-b826-77efc0933b08.png" alt="Supernatural mystery series poster with otherworldly elements and dark mystical themes" />
-                        </div>
-                        <h3 class="card-title">Misterio Sobrenatural</h3>
-                        <p class="card-description">Fenómenos inexplicables y eventos paranormales que desafían toda lógica conocida.</p>
-                    </div>
-                </div>
-            </section>
-
             <!-- TV Section -->
-            <section id="tv" class="section">
+            <section id="tv" class="section active">
                 <h2 class="section-title">Canales de TV</h2>
                 <a href="https://bestleague.one/cvatt.html?get=VGVsZWZlSEQ=&lang=1" target="_blank" style="text-decoration: none; color: inherit;">
                     <div class="channel">
@@ -442,6 +466,17 @@
                         <div class="channel-info">
                             <h3>América TV</h3>
                             <p>Entretenimiento, noticias y programación diversa. Uno de los canales más populares de Argentina con contenido para toda la familia.</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://rereyano.ru/player/3/76" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="channel">
+                        <div class="channel-logo">
+                            <img src="https://placehold.co/80x80?text=ESPN+Premium" alt="ESPN Premium sports channel logo with red corporate branding" />
+                        </div>
+                        <div class="channel-info">
+                            <h3>ESPN PREMIUM</h3>
+                            <p>Canal premium de deportes. Transmisiones exclusivas de fútbol, tenis, básquet y los mejores eventos deportivos internacionales.</p>
                         </div>
                     </div>
                 </a>
@@ -519,11 +554,4 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
+```
