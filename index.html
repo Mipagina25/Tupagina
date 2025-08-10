@@ -3,136 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Sótano - Portal Cinematográfico</title>
+    <title>El Sótano - Películas</title>
     <style>
-        /* (mantengo todos tus estilos originales sin la parte de reseñas) */
-        /* ... estilos originales ... */
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #0a0a0a;
+            color: #f2f2f2;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background-color: #111;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #e50914;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: #e50914;
+            letter-spacing: 2px;
+        }
+
+        /* ===== NAVEGACIÓN ===== */
+        nav {
+            background-color: #1a1a1a;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #e50914;
+            color: #fff;
+        }
+
+        /* ===== SECCIONES ===== */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h2 {
+            border-left: 5px solid #e50914;
+            padding-left: 10px;
+            margin-bottom: 15px;
+            color: #e50914;
+        }
+
+        .peliculas {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .pelicula {
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
+        }
+
+        .pelicula:hover {
+            transform: scale(1.05);
+        }
+
+        .pelicula img {
+            width: 100%;
+            display: block;
+        }
+
+        .pelicula h3 {
+            padding: 10px;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+            background-color: #111;
+            border-top: 3px solid #e50914;
+            margin-top: 20px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="particles" id="particles"></div>
-
-    <header class="header">
-        <div class="nav-container">
-            <div class="logo">EL SÓTANO</div>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#peliculas">Películas</a></li>
-                    <li><a href="#generos">Géneros</a></li>
-                    <li><a href="#tv">TV</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header>
+        <h1>🎬 El Sótano</h1>
     </header>
 
-    <section class="hero" id="inicio">
-        <div class="hero-content">
-            <h1 class="hero-title">EL SÓTANO</h1>
-            <p class="hero-subtitle">Descubre el lado más oscuro y fascinante del cine</p>
-            <button class="hero-cta" onclick="scrollToSection('peliculas')">Explorar Películas</button>
-        </div>
-    </section>
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Estrenos</a>
+        <a href="#">Terror</a>
+        <a href="#">Suspenso</a>
+        <a href="#">Contacto</a>
+    </nav>
 
-    <section class="featured-section" id="peliculas">
-        <h2 class="section-title fade-in">Películas Destacadas</h2>
-        <div class="movies-grid">
-            <div class="movie-card fade-in">
-                <div class="movie-image">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/d/d9/Hereditary.png" alt="Hereditary Poster">
-                </div>
-                <div class="movie-info">
-                    <h3 class="movie-title">Hereditary</h3>
-                    <p class="movie-genre">Terror Psicológico</p>
-                    <p class="movie-description">Una familia se ve envuelta en una pesadilla tras la muerte de su abuela, revelando oscuros secretos heredados.</p>
-                </div>
+    <div class="container">
+        <h2>Películas Recomendadas</h2>
+        <div class="peliculas">
+            <div class="pelicula">
+                <img src="https://via.placeholder.com/300x450?text=Película+1" alt="Película 1">
+                <h3>Película 1</h3>
             </div>
-
-            <div class="movie-card fade-in">
-                <div class="movie-image">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/6/6e/The_Lighthouse_%282019_film%29.png" alt="El Faro Poster">
-                </div>
-                <div class="movie-info">
-                    <h3 class="movie-title">El Faro</h3>
-                    <p class="movie-genre">Suspenso / Horror</p>
-                    <p class="movie-description">Dos fareros quedan atrapados en una remota isla, desatando la locura y la desconfianza.</p>
-                </div>
+            <div class="pelicula">
+                <img src="https://via.placeholder.com/300x450?text=Película+2" alt="Película 2">
+                <h3>Película 2</h3>
             </div>
-
-            <div class="movie-card fade-in">
-                <div class="movie-image">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/f/f4/Enemy_poster.jpg" alt="Enemy Poster">
-                </div>
-                <div class="movie-info">
-                    <h3 class="movie-title">Enemy</h3>
-                    <p class="movie-genre">Thriller Psicológico</p>
-                    <p class="movie-description">Un hombre descubre a su doble exacto, desencadenando una obsesión inquietante.</p>
-                </div>
+            <div class="pelicula">
+                <img src="https://via.placeholder.com/300x450?text=Película+3" alt="Película 3">
+                <h3>Película 3</h3>
             </div>
-
-            <div class="movie-card fade-in">
-                <div class="movie-image">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/Midsommar_%282019_film_poster%29.png" alt="Midsommar Poster">
-                </div>
-                <div class="movie-info">
-                    <h3 class="movie-title">Midsommar</h3>
-                    <p class="movie-genre">Terror Folk</p>
-                    <p class="movie-description">Un festival de verano en Suecia se convierte en una experiencia aterradora para un grupo de amigos.</p>
-                </div>
-            </div>
-
-            <div class="movie-card fade-in">
-                <div class="movie-image">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/6/63/Prisoners2013Poster.jpg" alt="Prisoners Poster">
-                </div>
-                <div class="movie-info">
-                    <h3 class="movie-title">Prisoners</h3>
-                    <p class="movie-genre">Thriller / Drama</p>
-                    <p class="movie-description">La desaparición de dos niñas enfrenta a un padre desesperado y a un detective en una carrera contra el tiempo.</p>
-                </div>
+            <div class="pelicula">
+                <img src="https://via.placeholder.com/300x450?text=Película+4" alt="Película 4">
+                <h3>Película 4</h3>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="genres-section" id="generos">
-        <div class="genres-container">
-            <h2 class="section-title fade-in">Géneros Cinematográficos</h2>
-            <div class="genres-grid">
-                <div class="genre-card fade-in"><div class="genre-icon">🎭</div><div class="genre-name">Terror</div></div>
-                <div class="genre-card fade-in"><div class="genre-icon">🔍</div><div class="genre-name">Thriller</div></div>
-                <div class="genre-card fade-in"><div class="genre-icon">🌙</div><div class="genre-name">Suspenso</div></div>
-                <div class="genre-card fade-in"><div class="genre-icon">🔮</div><div class="genre-name">Psicológico</div></div>
-                <div class="genre-card fade-in"><div class="genre-icon">🕵️</div><div class="genre-name">Drama</div></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="featured-section" id="tv">
-        <h2 class="section-title fade-in">TV</h2>
-        <div style="text-align:center; margin-top:2rem;">
-            <a href="https://bestleague.one/cvatt.html?get=VGVsZWZlSEQ=&lang=1" target="_blank" style="color:#cc0000; font-size:1.5rem; text-decoration:none;">Ver TV en Vivo</a>
-        </div>
-    </section>
-
-    <footer class="footer" id="contacto">
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#sobre-nosotros">Sobre Nosotros</a>
-                <a href="#politica-privacidad">Política de Privacidad</a>
-                <a href="#terminos-servicio">Términos de Servicio</a>
-                <a href="#contacto">Contacto</a>
-                <a href="#newsletter">Newsletter</a>
-            </div>
-            <p class="footer-text">© 2024 El Sótano. Todos los derechos reservados. Portal dedicado a la cinematografía de culto y géneros alternativos.</p>
-        </div>
+    <footer>
+        © 2025 El Sótano - Tu rincón del cine
     </footer>
-
-    <script>
-        // se mantiene el script original con animaciones y partículas
-    </script>
 </body>
 </html>
+
 
 
 
