@@ -20,4 +20,4 @@ Solo entra a la página y elige el canal que quieras ver.
 
 ## Autor
 
-Tu Nombre - [Tu GitHub](https://github.com/tuusuario)
+Uriel palavecino
