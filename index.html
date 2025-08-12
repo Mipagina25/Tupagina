@@ -27,10 +27,11 @@
             <section id="tv" class="section active">
                 <h2 class="section-title">Canales de TV</h2>
 
+                <!-- Telefe -->
                 <a href="https://bestleague.one/cvatt.html?get=VGVsZWZlSEQ=&lang=1" target="_blank" style="text-decoration: none; color: inherit;">
                     <div class="channel">
                         <div class="channel-logo">
-                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0053888f-c939-4148-a7dc-e38f6e90b083.png" alt="Telefe television channel logo with blue and white corporate branding" />
+                            <img src="img/telefe.jpg" alt="Telefe television channel logo" />
                         </div>
                         <div class="channel-info">
                             <h3>Telefe</h3>
@@ -39,10 +40,11 @@
                     </div>
                 </a>
 
+                <!-- El Trece -->
                 <a href="https://bestleague.one/cvatt.html?get=QXJ0ZWFySEQ&lang=1" target="_blank" style="text-decoration: none; color: inherit;">
                     <div class="channel">
                         <div class="channel-logo">
-                            <img src="https://placehold.co/80x80" alt="El Trece television channel logo with red and white corporate design elements" />
+                            <img src="img/eltrece.png" alt="El Trece television channel logo" />
                         </div>
                         <div class="channel-info">
                             <h3>El Trece</h3>
@@ -51,10 +53,11 @@
                     </div>
                 </a>
 
+                <!-- LN+ -->
                 <a href="https://bestleague.one/cvatt.html?get=TGFfTmFjaW9u&lang=1" target="_blank" style="text-decoration: none; color: inherit;">
                     <div class="channel">
                         <div class="channel-logo">
-                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/945b6df9-9f7c-4909-af27-e97b4d50fea4.png" alt="La Nación Plus television channel logo with news and information branding" />
+                            <img src="img/LN.jpg" alt="La Nación Plus television channel logo" />
                         </div>
                         <div class="channel-info">
                             <h3>LN+</h3>
@@ -63,10 +66,11 @@
                     </div>
                 </a>
 
+                <!-- América TV -->
                 <a href="https://bestleague.one/cvatt.html?get=QW1lcmljYVRW&lang=1" target="_blank" style="text-decoration: none; color: inherit;">
                     <div class="channel">
                         <div class="channel-logo">
-                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/380af717-4d3c-4570-9109-3eb0d8f4af2d.png" alt="América TV television channel logo with distinctive red and blue corporate design" />
+                            <img src="img/americatv.png" alt="América TV television channel logo" />
                         </div>
                         <div class="channel-info">
                             <h3>América TV</h3>
@@ -75,10 +79,11 @@
                     </div>
                 </a>
 
+                <!-- ESPN Premium -->
                 <a href="https://rereyano.ru/player/3/76" target="_blank" style="text-decoration: none; color: inherit;">
                     <div class="channel">
                         <div class="channel-logo">
-                            <img src="https://placehold.co/80x80?text=ESPN+Premium" alt="ESPN Premium sports channel logo with red corporate branding" />
+                            <img src="img/espnpremium.png" alt="ESPN Premium sports channel logo" />
                         </div>
                         <div class="channel-info">
                             <h3>ESPN PREMIUM</h3>
@@ -87,11 +92,11 @@
                     </div>
                 </a>
 
-                <!-- Nuevo canal TV Pública -->
+                <!-- TV Pública -->
                 <a href="https://bestleague.one/cvatt.html?get=Q2FuYWw3&lang=1" target="_blank" style="text-decoration: none; color: inherit;">
                     <div class="channel">
                         <div class="channel-logo">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Canal_7_TV_Publica.png/800px-Canal_7_TV_Publica.png" alt="TV Pública Argentina channel logo" />
+                            <img src="img/tvp.png" alt="TV Pública Argentina channel logo" />
                         </div>
                         <div class="channel-info">
                             <h3>TV Pública</h3>
@@ -117,7 +122,6 @@
     </div>
 
     <script>
-        // Navigation functionality
         document.addEventListener('DOMContentLoaded', function() {
             const navButtons = document.querySelectorAll('.nav-btn');
             const sections = document.querySelectorAll('.section');
@@ -126,39 +130,30 @@
                 button.addEventListener('click', function() {
                     const targetSection = this.getAttribute('data-section');
 
-                    // Remove active class from all buttons and sections
                     navButtons.forEach(btn => btn.classList.remove('active'));
                     sections.forEach(section => section.classList.remove('active'));
 
-                    // Add active class to clicked button and corresponding section
                     this.classList.add('active');
                     document.getElementById(targetSection).classList.add('active');
                 });
             });
 
-            // Add some interactive effects
             const cards = document.querySelectorAll('.card');
             cards.forEach(card => {
                 card.addEventListener('mouseenter', function() {
                     this.style.transform = 'translateY(-5px) scale(1.02)';
                 });
-
                 card.addEventListener('mouseleave', function() {
                     this.style.transform = 'translateY(0) scale(1)';
                 });
             });
 
-            // Smooth scrolling effect for navigation
             navButtons.forEach(button => {
                 button.addEventListener('click', function() {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
             });
 
-            // Add loading effect for images
             const images = document.querySelectorAll('img');
             images.forEach(img => {
                 img.addEventListener('load', function() {
